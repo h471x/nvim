@@ -45,7 +45,7 @@ return {
       --visual
       --replace
       inactive = {
-        a = { bg = color.bg, fg = color.white, gui = "bold" },
+        a = { bg = color.green, fg = color.bg, gui = "bold" }, -- gui = "bold" },
         b = { bg = color.bg, fg = color.fg },
         c = { bg = color.bg, fg = color.fg },
       },
@@ -54,6 +54,7 @@ return {
     lualine.setup({
       options = {
         theme = htx_theme,
+        disabled_filetypes = { "neo-tree" },
       },
     })
 

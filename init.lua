@@ -59,6 +59,13 @@ vim.api.nvim_set_keymap("n", "<A-q>", ":lua neotree_focus()<CR>", silently)
 -- Here to set the editor focus shortcut with silence
 -- vim.api.nvim_set_keymap("n", "<A-Right>", "<C-l>", { noremap = true, silent = true })
 
+-- Here to focus the current buffer
+function Buffer_focus()
+  vim.cmd("silent! wincmd p")
+end
+
+vim.api.nvim_set_keymap("n", "<A-Left>", ":lua Buffer_focus()<CR>", silently)
+
 -- Here to set the save shortcut with silence
 function save()
   vim.cmd("silent! w")
