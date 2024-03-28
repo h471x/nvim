@@ -98,6 +98,8 @@ vim.api.nvim_set_keymap("i", "<C-y>", "<ESC>", silently)
 
 -- Here to set the quit shortcut with silence
 function quit()
+  -- Close NeoTree if opened
+  vim.cmd("silent! Neotree close")
   vim.cmd("silent! q!")
 end
 
@@ -109,6 +111,8 @@ vim.api.nvim_set_keymap("i", "<C-q>", "<C-o>:lua quit()<CR>", silently)
 
 -- Here to set the quit and save shortcut with silence
 function quit_save()
+  -- Close NeoTree if opened
+  vim.cmd("silent! Neotree close")
   vim.cmd("silent! wq")
 end
 
