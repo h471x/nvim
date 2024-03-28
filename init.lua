@@ -44,6 +44,8 @@ vim.api.nvim_set_keymap("n", "<C-h>", ":lua tab_left()<CR>", silently)
 
 -- Here to set the delete tab shortcut with silence
 function tab_delete()
+  -- Close NeoTree if opened
+  vim.cmd("silent! Neotree close")
   vim.cmd("silent! bd")
 end
 
