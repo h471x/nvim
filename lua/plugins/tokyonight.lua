@@ -9,7 +9,7 @@ return {
       styles = {
         sidebars = "transparent",
         floats = "transparent",
-        comments = "italic", -- Make comments italic
+        -- comments = "italic", -- Make comments italic
         keywords = "bold", -- Make keywords bold
         -- functions = "underline", -- Underline function names
         variables = "NONE", -- Disable styling for variables
