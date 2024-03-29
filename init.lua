@@ -47,6 +47,7 @@ function tab_delete()
   -- Close NeoTree if opened
   vim.cmd("silent! Neotree close")
   vim.cmd("silent! bd")
+  vim.cmd("silent! Neotree show")
 end
 
 vim.api.nvim_set_keymap("n", "<C-w>", ":lua tab_delete()<CR>", silently)
