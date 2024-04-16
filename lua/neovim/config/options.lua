@@ -5,3 +5,7 @@ workspaces = {
   -- Set `auto_load` to `false` to prevent automatic loading of workspaces on startup
   auto_load = false,
 }
+
+vim.cmd("set completeopt+=menu,noselect")
+-- here to make neovim as insert mode on startup
+-- vim.cmd("autocmd VimEnter * startinsert")
