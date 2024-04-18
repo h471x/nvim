@@ -11,15 +11,18 @@ require("neo-tree").setup({
         --"node_modules",
       },
     },
-  },
-  components = {
-    name = function(config, node, state)
-      local components = require("neo-tree.sources.common.components")
-      local name = components.name(config, node, state)
-      if node:get_depth() == 1 then
-        name.text = vim.fs.basename(vim.loop.cwd() or "")
-      end
-      return name
-    end,
+    -- Here to make the root name short
+    -- found on reddit :
+    -- https://www.reddit.com/r/neovim/comments/17ysbe4/neotree_root_name/
+    components = {
+      name = function(config, node, state)
+        local components = require("neo-tree.sources.common.components")
+        local name = components.name(config, node, state)
+        if node:get_depth() == 1 then
+          name.text = vim.fs.basename(vim.loop.cwd() or "")
+        end
+        return name
+      end,
+    },
   },
 })
