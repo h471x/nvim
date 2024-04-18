@@ -19,7 +19,8 @@ require("neo-tree").setup({
         local components = require("neo-tree.sources.common.components")
         local name = components.name(config, node, state)
         if node:get_depth() == 1 then
-          name.text = vim.fs.basename(vim.loop.cwd() or "")
+          local root_name = vim.fs.basename(vim.loop.cwd() or "")
+          name.text = string.upper(root_name) -- Capitalize the root name like in VSCode
         end
         return name
       end,
