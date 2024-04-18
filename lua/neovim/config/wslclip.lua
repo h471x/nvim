@@ -1,5 +1,9 @@
 -- This is to enable the WSL clipboard (found in the manual)
 -- Additional for root: add /mnt/c/Windows/System32 to $PATH environment of root
+
+-- Let neovim use the default clipboard of the os
+vim.opt.clipboard:append("unnamedplus")
+
 vim.cmd([[
   let g:clipboard = {
     \   'name': 'WslClipboard',
