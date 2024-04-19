@@ -6,6 +6,8 @@ workspaces = {
   auto_load = false,
 }
 
+-- this allows manual selection of the completion items
+-- without automatically selecting the first suggestion.
 vim.cmd("set completeopt+=menu,noselect")
 -- here to make neovim as insert mode on startup
 -- vim.cmd("autocmd VimEnter * startinsert")
