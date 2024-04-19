@@ -4,8 +4,14 @@ vim.opt.clipboard:append("unnamedplus")
 -- Function to execute shell commands and capture their output
 local function execute_command(command)
   local handle = io.popen(command)
+  if not handle then
+    return nil, "Failed to execute command"
+  end
   local result = handle:read("*a")
-  handle:close()
+  local success, reason = handle:close()
+  if not success then
+    return nil, "Failed to close command handle: " .. tostring(reason)
+  end
   return result
 end
 
@@ -13,7 +19,7 @@ end
 local uname_output = execute_command("uname -r")
 
 -- Determine if running on WSL based on uname output
-local is_wsl = uname_output:lower():find("microsoft") ~= nil
+local is_wsl = uname_output and uname_output:lower():find("microsoft") ~= nil
 
 -- Execute clipboard setup only if running on WSL
 -- Otherwise it will work without this on Linux
