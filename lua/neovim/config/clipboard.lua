@@ -25,14 +25,14 @@ local is_wsl = uname_output and uname_output:lower():find("microsoft") ~= nil
 local display_output = os.getenv("DISPLAY")
 
 -- Determine if RDP is active (based on $DISPLAY being :13.0)
-local rdp_active = display_output == ":13.0"
+local is_windows_terminal = display_output == ":0"
 
 -- Execute clipboard setup only if running on WSL
 -- Otherwise it will work without this on Linux
 if is_wsl then
   -- only use clip.exe on WSL in case we are not
   -- currently using it as RDP connection or WSL GUI
-  if not rdp_active then
+  if is_windows_terminal then
     -- This is to enable the WSL clipboard (found in the manual)
     -- Additional for root: add /mnt/c/Windows/System32 to $PATH environment of root
     local copyCmd = "clip.exe"
