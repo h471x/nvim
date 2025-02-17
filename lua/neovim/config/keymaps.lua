@@ -47,7 +47,9 @@ function neotree_focus()
 end
 
 keymap.set("n", "<A-Right>", ":lua neotree_focus()<CR>", silently)
+keymap.set("n", "<C-n>", ":lua neotree_focus()<CR>", silently)
 keymap.set("n", "<A-q>", ":lua neotree_focus()<CR>", silently)
+
 -- Here to set the editor focus shortcut with silence
 -- vim.api.nvim_set_keymap("n", "<A-Right>", "<C-l>", { noremap = true, silent = true })
 
