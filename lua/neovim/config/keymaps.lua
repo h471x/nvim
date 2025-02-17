@@ -20,6 +20,7 @@ end
 
 keymap.set("n", "<C-l>", ":lua tab_right()<CR>", silently)
 keymap.set("n", "<C-Right>", ":lua tab_right()<CR>", silently)
+keymap.set("n", "<Tab>", ":lua tab_right()<CR>", silently)
 
 -- Here to set the switch left tab shortcut with silence
 function tab_left()
@@ -28,6 +29,7 @@ end
 
 keymap.set("n", "<C-Left>", ":lua tab_left()<CR>", silently)
 keymap.set("n", "<C-h>", ":lua tab_left()<CR>", silently)
+keymap.set("n", "<Tab>", ":lua tab_left()<CR>", silently)
 
 -- Here to set the delete tab shortcut with silence
 function tab_delete()
