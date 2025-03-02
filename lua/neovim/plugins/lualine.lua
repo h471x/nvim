@@ -13,31 +13,33 @@ return {
       orange = "#e78804",
       -- fg = "#c3ccdc",
       fg = "#FFFFFF",
-      bg = "#000000",
+      black = "#000000",
+      -- bg = "#000000",
+      bg = nil, -- tranparent background
       white = "#FFFFFF",
     }
 
     local htx_theme = {
       normal = {
-        a = { bg = color.green, fg = color.bg, gui = "bold" }, -- gui = "bold" },
+        a = { bg = color.green, fg = color.black, gui = "bold" }, -- gui = "bold" },
         b = { bg = color.bg, fg = color.fg },
         c = { bg = color.bg, fg = color.fg },
       },
 
       insert = {
-        a = { bg = color.blue, fg = color.bg, gui = "bold" },
+        a = { bg = color.blue, fg = color.black, gui = "bold" },
         b = { bg = color.bg, fg = color.fg },
         c = { bg = color.bg, fg = color.fg },
       },
 
       command = {
-        a = { bg = color.orange, fg = color.bg, gui = "bold" },
+        a = { bg = color.orange, fg = color.black, gui = "bold" },
         b = { bg = color.bg, fg = color.fg },
         c = { bg = color.bg, fg = color.fg },
       },
 
       visual = {
-        a = { bg = color.pink, fg = color.bg, gui = "bold" },
+        a = { bg = color.pink, fg = color.black, gui = "bold" },
         b = { bg = color.bg, fg = color.fg },
         c = { bg = color.bg, fg = color.fg },
       },
@@ -45,7 +47,7 @@ return {
       --visual
       --replace
       inactive = {
-        a = { bg = color.green, fg = color.bg, gui = "bold" }, -- gui = "bold" },
+        a = { bg = color.green, fg = color.black, gui = "bold" }, -- gui = "bold" },
         b = { bg = color.bg, fg = color.fg },
         c = { bg = color.bg, fg = color.fg },
       },
