@@ -1,27 +1,22 @@
--- Make sure to define the module as a table and return it
 return {
   "nvim-lualine/lualine.nvim",
   config = function()
     local lualine = require("lualine")
-    local lazy_status = require("lazy.status")
 
     local color = {
       blue = "#049be7",
-      -- blue = "#65D1FF",
       green = "#42b00a",
       pink = "#d30ccf",
       orange = "#e78804",
-      -- fg = "#c3ccdc",
       fg = "#FFFFFF",
       black = "#000000",
-      -- bg = "#000000",
-      bg = nil, -- tranparent background
+      bg = nil,
       white = "#FFFFFF",
     }
 
     local htx_theme = {
       normal = {
-        a = { bg = color.green, fg = color.black, gui = "bold" }, -- gui = "bold" },
+        a = { bg = color.green, fg = color.black, gui = "bold" },
         b = { bg = color.bg, fg = color.fg },
         c = { bg = color.bg, fg = color.fg },
       },
@@ -47,7 +42,7 @@ return {
       --visual
       --replace
       inactive = {
-        a = { bg = color.green, fg = color.black, gui = "bold" }, -- gui = "bold" },
+        a = { bg = color.green, fg = color.black, gui = "bold" },
         b = { bg = color.bg, fg = color.fg },
         c = { bg = color.bg, fg = color.fg },
       },
@@ -56,21 +51,11 @@ return {
     lualine.setup({
       options = {
         theme = htx_theme,
-        disabled_filetypes = { "neo-tree" },
+        disabled_filetypes = {
+          statusline = { "snacks" }, -- disable in Snacks sidebar
+          winbar = {},
+        },
       },
     })
-
-    sections = {
-      lualine_x = {
-        {
-          lazy_status.updates,
-          cond = lazy_status.has_updates,
-          color = "#FFFFFF",
-        },
-        { "encoding" },
-        { "fileformat" },
-        { "filetype" },
-      },
-    }
   end,
 }
