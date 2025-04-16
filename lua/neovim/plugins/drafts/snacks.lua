@@ -1,7 +1,11 @@
 return {
   "folke/snacks.nvim",
   opts = {
-    indent = { enabled = true },
+    indent = {
+      enabled = true,
+      size = 0,
+      padding = 0.5,
+    },
     input = { enabled = true },
     notifier = { enabled = true },
     scope = { enabled = true },
